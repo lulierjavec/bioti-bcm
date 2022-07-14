@@ -1,0 +1,287 @@
+{
+  "intents": [
+    {
+      "tag": "hola",
+      "patterns": ["Hola", "Holis", "que tal", "Como estas?", "Como andas?", "Buenas", "Buenos dias", "como va", "todo bien?"],
+      "responses": [
+        "Holis :)",
+        "Hola! Soy Bioti, en qué te puedo ayudar?",
+        "Preguntame algo que quieras saber",
+        "Me llamo Bioti, cómo puedo ayudarte?"
+      ]
+    },
+
+    {
+      "tag": "quien-sos",
+      "patterns": ["quien sos?", "quién sos vos?", "qué podés decirme?", "que sabes hacer?", "que podes saber?"],
+      "responses": [
+        "Soy Bioti, el chatbot de BCM. Me programó Lu Erjavec, una docente de la cátedra =)",
+        "Me llamo Bioti y puedo responderte dudas sobre la cursada de BCM!",
+        "Soy Bioti y puedo responder tus dudas sobre BCM. Preguntame algo y con gusto voy a intentar ayudartes!"
+      ]
+    },
+
+    {
+      "tag": "adios",
+      "patterns": ["Chau", "Nos vemos", "Adios", "hasta luego"],
+      "responses": [
+        "Nos vemos! ;)",
+        "Que tengas un buen día =)",
+        "Chau! Nos vemos pronto",
+        "Gracias por consultarme",
+        "Chau! Cualquier cosa acá estoy =)",
+        "Adiosito!"
+      ]
+    },
+    {
+      "tag": "sinrespuesta",
+      "patterns": [],
+      "responses": [
+        "No te entendí, podrías reformular tu pregunta?",
+        "No me programaron para contestar eso, podrías reformular tu pregunta?"
+      ]
+    },
+    {
+      "tag": "vacío",
+      "patterns": [""],
+      "responses": [
+        "No te entendí, podrías reformular tu pregunta?",
+        "No me programaron para contestar eso, podrías reformular tu pregunta?",
+        "Podrías reformular tu pregunta?",
+        "Preguntame algo"
+      ]
+    },
+    {
+      "tag": "definiciones",
+      "patterns": [
+        "qué es una proteína?",
+        "que es el DNA recombinante?",
+        "definición de DNA",
+        "decime qué es el tejido",
+        "qué es una pipeta?",
+        "qué es la ley de lambert-beer?",
+        "que es un esfingolipido?",
+        "que son las balsas?",
+        "que proteinas hay en la membrana?",
+        "que es un raton knock out?",
+        "qué son los microarrays?",
+        "definicion de enzimas",
+        "que es una kinasa?",
+        "qué es un cultivo promario?"
+      ],
+      "responses": [
+        "No estoy programada para darte definiciones! Pero podés preguntarle a tu docente a cargo =)"
+      ]
+    },
+
+    {
+      "tag": "gracias",
+      "patterns": ["gracias", "gracias por la ayuda", "muchas gracias", "buenísimo", "ok gracias", "genial", "te agradezco"],
+      "responses": ["De nada!", "Que bueno que te pude ayudar!", "Un placer =)", "Cualquier cosa acá estoy =)"]
+    },
+    {
+      "tag": "examenes",
+      "patterns": [
+        "cuándo es el examen?",
+        "Que dia son los parciales?",
+        "En que fechas son los examenes?",
+        "quiero saber qué día es el examen",
+        "decime el horario de los exámenes",
+        "cuando se toma la prueba",
+        "parciales información",
+        "Informacion sobre el examen",
+        "info examen",
+        "Que temas entran en los examenes?",
+        "me dirías información sobre el parcial?",
+        "preguntas exámenes",
+        "Dia y horario examenes"
+      ],
+      "responses": ["Sobre qué exámenes querés saber?", "Sobre qué examen querés info?"]
+    },
+    {
+      "tag": "regulatorios",
+      "patterns": [
+        "donde es el regu?",
+        "dónde es el regulatorio?",
+        "en qué aula van ser los regulatorios?",
+        "cuándo son los regu?",
+        "Que dia son los regus?",
+        "En que fechas son los regulatorios?",
+        "quiero saber qué día es el regulatorio",
+        "decime el horario de los regulatorios",
+        "cuando se toman los regus",
+        "parciales regulatorios",
+        "Informacion sobre el regulatorio",
+        "info regu",
+        "Que temas entran en los regulatorios?",
+        "Temario regulatorio",
+        "Teoricos que entran en los regulatorios",
+        "preguntas regulatorio",
+        "me dirías información sobre el regulatorio?",
+        "Dia y horario regulatories"
+      ],
+      "responses": [
+        "El primer regu va a ser la semana del 19/09 en tu horario de comisión de manera presencial, en aulas a confirmar según tu comisión. Los temas que entran son los correspondientes al taller de discusión 1 y 2, TP virtual 1 y 2, y los contenidos de los teóricos relacionados con estos talleres y TPs."
+      ]
+    },
+
+    {
+      "tag": "recuperatorios",
+      "patterns": [
+        "donde son los recu?",
+        "dónde es el recuperatorio?",
+        "en qué aula van ser los recuperatorios?",
+        "cuándo es el recu?",
+        "Que dia son los recus?",
+        "En que fechas son los recuperatorios?",
+        "quiero saber qué día es el recuperatorio",
+        "decime el horario de los recuperatorios",
+        "cuando se toman los recus",
+        "parciales recuperatorios",
+        "Informacion sobre el recuperatorio",
+        "info recus",
+        "Que temas entran en los recuperatorios?",
+        "Temario recuperatorio",
+        "Teoricos que entran en los recuperatorios",
+        "preguntas recuperatorio",
+        "me dirías información sobre el recuperatorio?",
+        "Dia y horario recuperaterio"
+      ],
+      "responses": [
+        "Los recuperatorios son cuando termina la cursada. Todavía no sabemos fechas, horarios ni aulas."
+      ]
+    },
+
+    {
+      "tag": "promocionales",
+      "patterns": [
+        "donde son los promo?",
+        "dónde es el promocional?",
+        "en qué aula van ser los promocionales?",
+        "cuándo son los promo?",
+        "Que dia son los promos?",
+        "En que fechas son los promocionales?",
+        "quiero saber qué día es el promocional",
+        "decime el horario de los promocionales",
+        "cuando se toman los promo",
+        "parciales promocionales",
+        "Informacion sobre el promocional",
+        "info promos",
+        "Que temas entran en los promocionales?",
+        "Temario promocional",
+        "Teoricos que entran en los promocionales",
+        "preguntas promocional",
+        "me dirías información sobre el promocional?",
+        "Dia y horario promocionoles"
+      ],
+      "responses": [
+        "El primer promo va a ser la semana del 26/09, probablemente el día miércoles, pero aún tenemos que confirmar día y horario según disponibilidad de aulas. El aula depende de tu comisión. Los temas que entran también serán publicados acá y en el campus en breves :)"
+      ]
+    },
+
+    {
+      "tag": "finales",
+      "patterns": [
+        "donde son los finales?",
+        "dónde es el final?",
+        "en qué aula van ser los finales?",
+        "cuándo son los finales?",
+        "Que dia son los finales?",
+        "En que fechas son los finales?",
+        "quiero saber qué día es el final",
+        "decime el horario de los finales",
+        "cuando se toma el final",
+        "Informacion sobre el final",
+        "info finales",
+        "Que temas entran en los finales?",
+        "Temario finales",
+        "Teoricos que entran en los finales",
+        "preguntas final",
+        "me dirías información sobre el final?",
+        "Dia y horario finales"
+      ],
+      "responses": [
+        "Los finales son en diciembre."
+      ]
+    },
+
+    {
+      "tag": "trabajo-practico",
+      "patterns": [
+        "donde son los TPs?",
+        "dónde es el TP?",
+        "en qué aula van ser los trabajos prácticos?",
+        "cuándo son los trabajos practicos?",
+        "Que dia son los trabajos prácticos?",
+        "En que fechas son los tps?",
+        "quiero saber qué día es el tp",
+        "decime el horario de los tps",
+        "Informacion sobre el trabajo práctico",
+        "info trabajo pracitico",
+        "parcialito trabajo práctico",
+        "me dirías información sobre los tps?",
+        "Dia y horario trabajos practicos",
+        "qué tengo que llevar al tp?",
+        "que necesito para ir al trabajo práctico",
+        "tengo que llevar cosas al trabajo práctico?"
+      ],
+      "responses": [
+        "Los trabajos prácticos presenciales son en el laboratorio de BCM (primer piso de FFyB) en tu horario de comisión. Según qué grupo te tocó esta semana vas a tener TP presencial o virtual. Podés chequearlo en el cronograma del campus."
+      ]
+    },
+
+    {
+      "tag": "lugar-aula",
+      "patterns": [
+        "donde es la catedra?",
+        "en qué aula se cursa?",
+        "en que aula son los talleres?",
+        "donde es la cursada",
+        "donde es el laboratorio?",
+        "donde esta bcm?",
+        "Dónde queda la cátedra",
+        "Donde son las clases presenciales",
+        "en donde esta el laboratorio",
+        "lugar de las clases",
+        "donde es el taller?"
+      ],
+      "responses": [
+        "La cátedra de BCM y su laboratorio de TPs están en el 1er piso de FFyB. Los talleres van a ser en el aula de conferencias (planta baja)"
+      ]
+    },
+
+    {
+      "tag": "notas",
+      "patterns": [
+        "cuándo van a estar las notas?",
+        "cuando dan las notas",
+        "cuánto tardan en darnos las notas?",
+        "qué día nos van a dar las calificaciones?",
+        "calificaciones cuanto tardan"
+      ],
+      "responses": [
+        "Las notas van a estar dentro de 10 días. Tenemos 850 alumnos!"
+      ]
+    },
+
+
+    {
+      "tag": "chiste",
+      "patterns": [
+        "Contame un chiste!",
+        "decime algún chiste",
+        "Contate un chiste",
+        "Algo gracioso",
+        "chistes",
+        "Sabes algun chiste?",
+        "chiste nerd",
+        "otro chiste"
+      ],
+      "responses": [
+        "Cuál es el animal que tiene entre tres y cuatro ojos? El piojo ;)",
+        "Alguien sabe algún chiste sobre el sodio? Na... =)",
+        "Qué grita un CH3 desde un décimo piso? 'Metilo o no metilo? JEJE!!"
+      ]
+    }
+  ]
+}
