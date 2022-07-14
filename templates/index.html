@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bioti - chatbot de Biología - Diseñado por Luciana Erjavec</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  </head>
+<body>
+<div class="container">
+    <div class="chatbox">
+      <div class="chatbox__support">
+        <div class="chatbox__header">
+          <div class="chatbox__image--header">
+            <img src="{{ url_for('static', filename='chatboticono.png') }}" />
+          </div>
+          <div class="chatbox__content--header">
+            <h4 class="chatbox__heading--header">Bioti</h4>
+          </div>
+        </div>
+
+        <div class="row" id=row>
+          <div class=respuesta id="respuesta"></div>
+        </div>
+
+        <div class="chatbox__footer">
+            <input class="form-control" type="text" placeholder="Escribí tu pregunta..." name="question" id="question">
+            &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-block" id="submit-button">Enviar&nbsp;&nbsp;<i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+<script src="/static/jquery.min.js" ></script>
+
+<script src="{{ url_for('static', filename='bootstrap.min.js') }}" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script>
+    /* agregado - para que la tecla enter envíe */
+    $("#question").keyup(function(event){
+        if(event.keyCode == 13){
+            $("#submit-button").click();
+        }
+    });
+</script>
+
+
+
+
+<script>
+    document.getElementById("submit-button").onclick = function() {
+      // User
+      let input = document.getElementById("question");
+
+      let divNode = document.createElement("div");
+      divNode.classList.add("message");
+      divNode.classList.add("right");
+      divNode.setAttribute("align", "right");
+
+
+      let textNode = document.createTextNode("Yo: "+input.value);
+      divNode.appendChild(textNode);
+
+      let chatbox = document.getElementById("respuesta");
+      chatbox.appendChild(divNode);
+
+      // Answer
+    //  let divNodeAnswer = document.createElement("div");
+  //    divNodeAnswer.classList.add("message");
+  //    divNodeAnswer.classList.add("left");
+  //    divNodeAnswer.setAttribute("id", "robot")
+
+  //    let textNodeAnswer = document.createTextNode("respuesta");
+  //    divNodeAnswer.appendChild(textNodeAnswer);
+  //    chatbox.appendChild(divNodeAnswer);
+    };
+
+</script>
+
+
+
+
+<!--Esto vino con el código original-->
+<script>
+
+      jQuery(document).ready(function() {
+
+        $("#submit-button").click(function(e) {
+          e.preventDefault();
+
+          $.ajax({
+              type: "POST",
+              url: "/chatbot",
+              data: {
+                  question: $("#question").val()
+              },
+              success: function(result) {
+                $("#respuesta").append("<br>Bioti: "+result.response+"<br>");
+                $("#question").val("")
+
+              },
+              error: function(result) {
+                  alert('error');
+              }
+          });
+        });
+      });
+</script>
+
+
+
+<!--agregado - intento de que msjs aparezcan separados-->
+<!--
+<script>
+
+
+    function init() {
+        let res_elm = document.createElement("div");
+        res_elm.innerHTML="Hello Myself Aco, How can I help you?" ;
+        res_elm.setAttribute("class","left");
+
+        document.getElementById("respuesta").appendChild(res_elm);
+    }
+
+    /* msg=respuesta , o sea el ID del html de donde van a aparecer los msjs) */
+
+        var req = document.getElementById('question').value
+        var res = "";
+
+        let data_req = document.createElement("div");
+        let data_res = document.createElement("div");
+
+        let container1 = document.createElement("div");
+        let container2 = document.createElement("div");
+
+        container1.setAttribute("class","msgCon1");
+        container2.setAttribute("class","msgCon2");
+
+        data_req.innerHTML = req ;
+        data_res.innerHTML = res ;
+
+        data_req.setAttribute("class","right");
+        data_res.setAttribute("class","left");
+
+        let message = document.getElementById("respuesta");
+
+
+            message.appendChild(container1);
+            message.appendChild(container2);
+
+            container1.appendChild(data_req);
+            container2.appendChild(data_res);
+
+        document.getElementById("question").value = "";
+
+</script>
+
+-->
+
+<!--
+
+  <script>
+
+  class Chatbox{
+    constructor() {
+      this.args = {
+        chatBox: document.querySelector( selectors: "chatbox__support"),
+        sendButton: document.querySelector( selectors: "btn btn-primary btn-block")
+      }
+
+      display() {
+        const {chatBox, sendButton} = this.args;
+        sendButton.addEventListener( type:'click', listener: () => this.onSendButton(chatBox))
+        const node = chatBox.querySelector( selectors: 'input');
+          node.addEventListener( type:"keyup", listener:({key:string}) => {
+            if (key == "Enter") {
+              this.onSendButton(chatBox)
+            }
+        })
+      }
+
+
+       onSendButton(chatbox) {
+        var textField = chatbox.querySelector('input');
+        let text1 = textField.value
+        if (text1 === "") {
+          return;
+        }
+
+        let msg1 = { name: "User", response: text1 }
+        this.messages.push(msg1);
+
+
+        let msg2 = { name: "Bioti", message: r.response };
+        this.messages.push(msg2);
+        this.updateChatText(chatbox)
+        textField.value = ''
+
+
+        updateChatText(chatbox) {
+          var html = '';
+          this.messages.slice().reverse().forEach(function(item, index:number) {
+              if (item.name === "Bioti")
+              {
+                html += '<div class="messages__item messages__item--visitor">' + item.response + '</div>'
+              }
+              else
+              {
+                html += '<div class="messages__item messages__item--operator">' + item.message + '</div>'
+              }
+            });
+
+            const chatmessage = chatbox.querySelector('.chatbox__messages');
+            chatmessage.innterHTML = html;
+          }
+  }
+
+  const chatbox = new Chatbox();
+  chatbox.display();
+
+  </script>
+
+-->
+
+
+  </body>
+</html>
