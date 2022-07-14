@@ -1,7 +1,6 @@
 import nltk
 nltk.download('punkt')
 nltk.download('wordnet')
-nltk.download('stopwords')
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 import json
