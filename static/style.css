@@ -1,0 +1,221 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 100%;
+    background: #F1F1F1;
+}
+
+*, html {
+    --primaryGradient: linear-gradient(93.12deg, #581B98 0.52%, #9C1DE7 100%);
+    --secondaryGradient: linear-gradient(268.91deg, #581B98 -2.14%, #9C1DE7 99.69%);
+    --primaryBoxShadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    --secondaryBoxShadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
+    --primary: #581B98;
+}
+
+
+
+.row {
+    box-sizing: border-box;
+    padding: 1px 20px;
+    position: sticky;
+    top: 100px;
+    height: 70vh;
+    overscroll-behavior-y: contain;
+    scroll-snap-type: y proximity;
+}
+
+.row > div > div:last-child {
+      scroll-snap-align: end;
+
+}
+
+
+.respuesta {
+  box-sizing: border-box;
+  font-family: "Calibri", sans-serif;
+  text-align:justify;
+  color:#5B0A88;
+  font-size:16px;
+  padding:5px;
+  height: 97%;
+  padding:5px 12px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+    scroll-behavior:smooth;
+    overscroll-behavior-y: contain;
+    scroll-snap-type: y proximity;
+}
+
+.respuesta > div > div:last-child {
+      scroll-snap-align: end;
+
+}
+
+.left, .right{
+      font-size:16px;
+      padding:5px;
+      width:auto;
+      min-height:3.6%;
+      min-width:96%;
+      max-width:97%;
+      margin:8px 16px;
+        word-wrap:break-word;
+    }
+
+.left{
+    float:left;
+    color:#000;
+    background:#b3bfca;
+    border-radius:0 16px 16px 16px;
+}
+
+.right{
+    box-sizing: border-box;
+    display:inline-block;
+    text-align: left;
+    color:#44185C;
+    background:#D6C9FF;
+    border-radius:16px 16px 0 16px;
+    overflow-x: hidden;
+      word-wrap:break-word;
+}
+
+
+
+
+/* CHATBOX agregue maxheight pero no cambia nada
+=============== */
+.chatbox {
+  max-height: 99vh;
+}
+
+/* CONTENEDOR de header + row + footer OK */
+.chatbox__support {
+    display: flex;
+    flex-direction: column;
+    z-index: -123456;
+    opacity: 1;
+}
+
+
+
+/* HEADER OK */
+.chatbox__header {
+    box-sizing: border-box;
+    width: 99%;
+    position: sticky;
+    top: 0;
+    background: var(--primaryGradient);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 1px 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: var(--primaryBoxShadow);
+}
+
+.chatbox__image--header {
+    margin-right: 10px;
+}
+
+.chatbox__heading--header {
+    font-size: 1.9rem;
+    color: white;
+}
+
+
+/* Messages */
+
+
+
+p {
+    box-sizing: border-box;
+    font-family: 'Comics Sans Ms', sans-serif;
+    font-weight: 200;
+    font-size: 100%;
+}
+/*no me edta funcionadno */
+
+
+
+/* MESSAGES noooooooooo */
+/* Messages */
+
+
+.messages__item {
+    margin-top: 10px;
+    background: #E0E0E0;
+    padding: 8px 12px;
+    max-width: 70%;
+}
+
+.messages__item--visitor,
+.messages__item--typing {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.messages__item--operator {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background: var(--primary);
+    color: white;
+}
+
+
+
+/* donde se introducen msjs ok - optimizar*/
+/* FOOTER */
+.chatbox__footer {
+    box-sizing: border-box;
+    width: 99%;
+    position: relative;
+    bottom: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background: var(--secondaryGradient);
+    box-shadow: var(--secondaryBoxShadow);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-top: 0px;
+}
+
+.chatbox__footer input {
+    box-sizing: border-box;
+    max-width: 70%;
+    width: 70%;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 30px;
+    text-align: left;
+}
+
+
+/* boton de enviar OK */
+.btn {
+    box-sizing: border-box;
+    text-align: right;
+    color: white;
+    background: #581B98;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-color: transparent;
+    outline: none;
+    cursor: pointer;
+    font-size:14px;
+}
+
+.btn:active {
+      font-size:12px;
+}
+
+/*otros???*/
