@@ -25,4 +25,4 @@ def chatbotResponse():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(hody='0.0.0.0', port=port, debug=True)
